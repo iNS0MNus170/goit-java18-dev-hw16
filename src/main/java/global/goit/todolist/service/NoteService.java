@@ -16,32 +16,38 @@ public class NoteService {
 
     private final Map<Long, Note> notes = new ConcurrentHashMap<>();
 
-    public List<Note> listAll() {
-        return new ArrayList<>(notes.values());
-    }
-
     @PostConstruct
     public void init() {
         add(Note.builder()
                 .title("Elden Ring: Game Review")
-                .content("Elden Ring is an exciting action RPG developed by FromSoftware. It offers a vast open world and a complex combat system, making every battle unique.")
+                .content("Elden Ring is an exciting action RPG developed by FromSoftware. " +
+                         "It offers a vast open world and a complex combat system, making every battle unique.")
                 .build());
         add(Note.builder()
                 .title("Cyberpunk 2077: Patches and Updates")
-                .content("Cyberpunk 2077, after numerous updates, has become much more stable and impressive. The game mechanics, graphics, and story are now on a new level.")
+                .content("Cyberpunk 2077, after numerous updates, has become much more stable and impressive. " +
+                         "The game mechanics, graphics, and story are now on a new level.")
                 .build());
         add(Note.builder()
                 .title("The Witcher 3: Wild Hunt")
-                .content("The Witcher 3 is an epic story about Geralt of Rivia, with many quests, an open world, and intense combat. One of the best role-playing games of all time.")
+                .content("The Witcher 3 is an epic story about Geralt of Rivia, with many quests, an open world, " +
+                         "and intense combat. One of the best role-playing games of all time.")
                 .build());
         add(Note.builder()
                 .title("Minecraft: How to Create Your World")
-                .content("Minecraft is a game where you can build your own worlds from blocks. From simple buildings to large castles and cities. The game stimulates creativity and offers endless possibilities.")
+                .content("Minecraft is a game where you can build your own worlds from blocks. " +
+                         "From simple buildings to large castles and cities. " +
+                         "The game stimulates creativity and offers endless possibilities.")
                 .build());
         add(Note.builder()
                 .title("Horizon Zero Dawn: Post-Apocalyptic Journey")
-                .content("Horizon Zero Dawn is an adventure game where you play as Aloy, a young woman exploring a post-apocalyptic world inhabited by robots and strange creatures.")
+                .content("Horizon Zero Dawn is an adventure game where you play as Aloy, " +
+                         "a young woman exploring a post-apocalyptic world inhabited by robots and strange creatures.")
                 .build());
+    }
+
+    public List<Note> listAll() {
+        return new ArrayList<>(notes.values());
     }
 
     public Note add(Note note) {
