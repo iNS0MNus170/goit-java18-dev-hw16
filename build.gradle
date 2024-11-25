@@ -34,6 +34,3 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
-}
