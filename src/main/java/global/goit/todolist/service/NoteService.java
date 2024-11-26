@@ -2,7 +2,6 @@ package global.goit.todolist.service;
 
 import global.goit.todolist.entity.Note;
 import global.goit.todolist.repository.NoteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,7 +13,7 @@ public class NoteService {
 
     private final NoteRepository noteRepository;
 
-    @Autowired
+
     public NoteService(NoteRepository noteRepository) {
         this.noteRepository = noteRepository;
     }
